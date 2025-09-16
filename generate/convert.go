@@ -285,6 +285,10 @@ func (g *generator) convertType(
 		}
 	}
 
+	if !typ.NonNull {
+		goTyp = &goPointerType{goTyp}
+	}
+
 	return goTyp, nil
 }
 
